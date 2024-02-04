@@ -1,6 +1,7 @@
 import os
 import pytest
 from appium.options.ios import XCUITestOptions
+from appium import webdriver
 from dotenv import load_dotenv
 from appium.options.android import UiAutomator2Options
 from selene import browser
@@ -33,11 +34,10 @@ def mobile_management_android():
         }
     })
 
-    # browser.config.driver = webdriver.Remote("http://hub.browserstack.com/wd/hub", options=options)
-    browser.config.driver_remote_url = 'http://hub.browserstack.com/wd/hub'
-    browser.config.driver_options = options
-
-    # browser.config.timeout = 20
+    browser.config.driver = webdriver.Remote("http://hub.browserstack.com/wd/hub", options=options)
+    '''is not working!!'''
+    # browser.config.driver_remote_url = 'http://hub.browserstack.com/wd/hub'
+    # browser.config.driver_options = options
 
     yield
 
@@ -66,11 +66,10 @@ def mobile_management_ios():
             "accessKey": password
         }
     })
-
-    browser.config.driver_remote_url = 'http://hub.browserstack.com/wd/hub'
-    browser.config.driver_options = options
-
-    # browser.config.timeout = 20
+    browser.config.driver = webdriver.Remote("http://hub.browserstack.com/wd/hub", options=options)
+    '''is not working!!'''
+    # browser.config.driver_remote_url = 'http://hub.browserstack.com/wd/hub'
+    # browser.config.driver_options = options
 
     yield
 
