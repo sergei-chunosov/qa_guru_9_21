@@ -37,7 +37,7 @@ def mobile_management_android():
     browser.config.driver_remote_url = 'http://hub.browserstack.com/wd/hub'
     browser.config.driver_options = options
 
-    browser.config.timeout = 10
+    # browser.config.timeout = 20
 
     yield
 
@@ -57,9 +57,9 @@ def mobile_management_ios():
 
         # Set other BrowserStack capabilities
         'bstack:options': {
-            "projectName": "First Python project",
-            "buildName": "browserstack-build-1",
-            "sessionName": "BStack first_test",
+            "projectName": "First Python project1",
+            "buildName": "browserstack-build-1-2",
+            "sessionName": "BStack first_test-1",
 
             # Set your access credentials
             "userName": user_name,
@@ -70,7 +70,7 @@ def mobile_management_ios():
     browser.config.driver_remote_url = 'http://hub.browserstack.com/wd/hub'
     browser.config.driver_options = options
 
-    browser.config.timeout = 10
+    # browser.config.timeout = 20
 
     yield
 
